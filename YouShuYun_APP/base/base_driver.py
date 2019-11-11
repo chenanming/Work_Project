@@ -10,4 +10,4 @@ from YouShuYun_APP.unit.read_element import ReadInit
 class BaseDriver:
     def __init__(self, driver:WebDriver):
         self.driver = driver
-        self.element = ReadInit()
+        self.readini = ReadInit()
