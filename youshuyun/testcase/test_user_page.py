@@ -27,10 +27,8 @@ class TestLogin:
         assert self.userpage.get_toast('登录成功') == True
 
     @allure.story("测试-手机号登录方式")
-    @pytest.mark.login
     def test_phone_login(self):
         ''' 测试03：手机号验证登录
         '''
-        #self.userpage.get_attribute()
         self.userpage.goto_user().click_login_avatar().phone_login('18888888888').phone_code_login('666666').click_login_button()
         assert self.userpage.get_toast('登录成功') == True

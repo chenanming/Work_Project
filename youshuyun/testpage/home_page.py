@@ -5,11 +5,14 @@ import pytest
 from appium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
+from youshuyun.testpage.search_page import SearchPage
 from youshuyun.testpage.user_page import UserPage
 from selenium.webdriver.common.by import By
 from youshuyun.testunit.read_element import ReadInit
 
 class HomePage:
+    _search_but = 'com.youshuge.happybook:id/ivSearch'
     def __init__(self):
         capabilities = {
             "platformName": "Android",
@@ -38,6 +41,12 @@ class HomePage:
         self.driver.find_element_by_android_uiautomator('new UiSelector().text("我的")').click()
         # self.driver.find_element_by_android_uiautomator(self.value.get_value('UserPage', '我的')).click()
         return UserPage(self.driver)
+
+    def goto_search(self):
+        ''' 点击搜索，进入搜索页面
+        '''
+        self.driver.find_element(By.ID, self._search_but).click()
+        return SearchPage(self.driver)
 
     def get_toast(self, message):
         ''' 验证弹窗提示

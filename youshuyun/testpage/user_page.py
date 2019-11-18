@@ -17,7 +17,7 @@ class UserPage(BaseDriver):
 
     def qq_login(self):
         # 选择、点击，QQ登录
-        self.driver.find_element(By.ID, "id/tvQQ").click()
+        self.driver.find_element(By.ID, "tvQQ").click()
         # self.driver.find_element(By.ID, self.readini.get_value('UserPage', 'QQ登录方式'))
         return self
 

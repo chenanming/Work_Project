@@ -24,4 +24,4 @@ class ReadInit:
 
 if __name__ == '__main__':
     d = ReadInit()
-    print(d.get_value('手机号输入框'))
+    print(d.get_value('search_input'))
