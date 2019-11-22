@@ -12,4 +12,4 @@ class TestSearch:
 		self.homepage = HomePage()
 
 	def test_search(self):
-		self.homepage.goto_search().search("超级").select(1)
+		self.homepage.goto_search().search("超级特种兵").select(1)

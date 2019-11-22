@@ -16,7 +16,7 @@ class SearchPage(BaseDriver):
 		self.driver.find_element(By.ID, self.readini.get_value("search_input")).send_keys(keyword)
 		return self
 
-	def select(self, index):
+	def select(self, keyword):
 		# 关键字，联想列表
-		self.driver.find_element_by_xpath('//*[@class_name="android.widget.FrameLayout"]/[@resource-id="com.youshuge.happybook:id/rvSearch")]')[index].click()
+		self.driver.find_element_by_xpath("//*[@resource-id, 'com.youshuge.happybook:id/tvTitle']//[@text=%s]").click() % (keyword)
 		return self
