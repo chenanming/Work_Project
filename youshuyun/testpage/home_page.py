@@ -5,18 +5,17 @@ import pytest
 from appium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-
 from youshuyun.testpage.search_page import SearchPage
 from youshuyun.testpage.user_page import UserPage
 from selenium.webdriver.common.by import By
-from youshuyun.testunit.read_element import ReadInit
+
 
 class HomePage:
     _search_but = 'com.youshuge.happybook:id/ivSearch'
     def __init__(self):
         capabilities = {
             "platformName": "Android",
-            "deviceName": "127.0.0.1:62027",
+            "deviceName": "2507c541",
             "appPackage": "com.youshuge.happybook",
             "appActivity": "com.youshuge.happybook.ui.SplashActivity",
             "automationName": "Uiautomator2",
