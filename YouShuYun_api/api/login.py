@@ -115,6 +115,5 @@ class QuickLogin(BaseApi):
 			"token": QuickLogin.token
 		}
 		res = requests.post(self._login_url, headers=self.headers, params=params).json()
-		print(res.encoding)
-		#self.versed(res)
+		self.versed(res)
 		return res
