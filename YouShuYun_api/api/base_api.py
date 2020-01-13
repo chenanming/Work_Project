@@ -12,4 +12,4 @@ class BaseApi:
 
 	@classmethod
 	def versed(cls, json_object):
-		print(JsonData.format(json_object))
+		print(JsonData.format(json_object)) # 使用Utils的format()方法对json数据（r），格式化输出

@@ -9,17 +9,11 @@ import pymysql
 
 class DB:
 
-	def __init__(self, host='localhsot', port='3306', user='root', passwd='root', db='', charset='utf-8'):
+	def __init__(self, host='localhsot', port='3306', user='root', passwd='root', database='', charset='utf8'):
 		# 建立连接
-		self.conn = pymysql.connect(
-			host="172.16.71.93",
-			user="root",
-			passwd="VSx6oKXPjvqQPJZ3GnIX",
-			database="leshu_test",
-			charset="utf-8"
-		)
+		self.conn = pymysql.connect(host=host, port=port, user=user, passwd=passwd, database=database, charset=charset)
 		# 创建游标
-		self.cur = self.conn.cursor(cursor= pymysql.cursors.DictCursor)
+		self.cur = self.conn.cursor(cursor = pymysql.cursors.DictCursor)
 
 	def __enter__(self):
 		# 返回游标
@@ -34,9 +28,6 @@ class DB:
 		self.conn.close()
 
 if __name__ == '__main__':
-	with DB(host="172.16.71.93",
-			port="3306",
-			user="root",
-			passwd="VSx6oKXPjvqQPJZ3GnIX",
-			db="leshu_test") as db:
-		db.execute("Select * from user")
+	with DB(host='172.16.71.93', user='root', passwd='VSx6oKXPjvqQPJZ3GnIX', database='leshu_test') as db:
+		db.execute('select * from user')
+		print(db)
