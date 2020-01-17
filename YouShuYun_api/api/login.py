@@ -81,6 +81,7 @@ class QuickLogin(BaseApi):
 
 	@classmethod
 	def save_device_id(cls):
+		# 缓存token，先定义一个空值变量token
 		if cls.token == None:
 			params = {
 				"Uid": "5d20dfe6dc75c465",
@@ -92,7 +93,7 @@ class QuickLogin(BaseApi):
 			res = requests.post(url=cls._save_id_url, headers=cls.headers, params=params).json()
 			cls.versed(res)
 			cls.token = res["data"]["token"]
-		return QuickLogin.token
+		return QuickLogin.token # QuickLogin类的实例，供全局调用
 
 	def get_user_info(self):
 		params = {
