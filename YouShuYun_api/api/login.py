@@ -93,7 +93,7 @@ class QuickLogin(BaseApi):
 			res = requests.post(url=cls._save_id_url, headers=cls.headers, params=params).json()
 			cls.versed(res)
 			cls.token = res["data"]["token"]
-		return QuickLogin.token # QuickLogin类的实例，供全局调用
+		return QuickLogin.token  # QuickLogin类的实例，供全局调用
 
 	def get_user_info(self):
 		params = {
