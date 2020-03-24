@@ -6,7 +6,7 @@
 # @Poject: Work_Project
 from selenium.webdriver.common.by import By
 
-from youshuyun.testbase.base_driver import BaseDriver
+from YouShuYun_UI.testbase.base_driver import BaseDriver
 
 
 class SearchPage(BaseDriver):

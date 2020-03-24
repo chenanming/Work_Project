@@ -5,7 +5,7 @@
 # @File: test_search.py
 # @Poject: Work_Project
 
-from youshuyun.testpage.home_page import HomePage
+from YouShuYun_UI.testpage.home_page import HomePage
 
 class TestSearch:
 	def setup(self):

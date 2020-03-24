@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding=utf-8 -*-
 import pytest, allure
-from youshuyun.testpage.home_page import HomePage
+from YouShuYun_UI.testpage.home_page import HomePage
 
 @allure.feature("测试-登录、退出流程")
 class TestLogin:

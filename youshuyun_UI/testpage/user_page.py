@@ -1,5 +1,5 @@
 from time import sleep
-from youshuyun.testbase.base_driver import BaseDriver
+from YouShuYun_UI.testbase.base_driver import BaseDriver
 from selenium.webdriver.common.by import By
 
 class UserPage(BaseDriver):

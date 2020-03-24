@@ -5,8 +5,8 @@ import pytest
 from appium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from youshuyun.testpage.search_page import SearchPage
-from youshuyun.testpage.user_page import UserPage
+from YouShuYun_UI.testpage.search_page import SearchPage
+from YouShuYun_UI.testpage.user_page import UserPage
 from selenium.webdriver.common.by import By
 
 
