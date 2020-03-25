@@ -10,7 +10,7 @@ import pytest, json
 import self as self
 
 from unit.json_format import JsonData
-from YouShuYun_api.api.base_api import BaseApi
+from YouShuYun_API.api.base_api import BaseApi
 '''
 proxies = {
 	'http': 'http://127.0.0.1:8888/',

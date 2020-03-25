@@ -6,7 +6,7 @@
 # @Poject: Work_Project
 
 import pytest, allure
-from YouShuYun_api.api.home import Recharge
+from YouShuYun_API.api.home import Recharge
 
 class TestRecharge:
 	rec = Recharge()

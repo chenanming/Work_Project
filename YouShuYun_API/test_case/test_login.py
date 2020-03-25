@@ -6,7 +6,7 @@
 # @Poject: Work_Project
 
 from unittest import TestCase
-from YouShuYun_api.api.login import QiLogin, QuickLogin
+from YouShuYun_API.api.login import QiLogin, QuickLogin
 
 
 class TestQiyouLogin:
