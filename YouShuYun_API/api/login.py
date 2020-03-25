@@ -86,7 +86,7 @@ class QuickLogin(BaseApi):
 			params = {
 				"Uid": "5d20dfe6dc75c465",
 				"only_code": "5d20dfe6dc75c465",
-				"app_type": "32",
+				"app_type": "32",  # 悠书云小说：32  言湘书城：34
 				"deviceCode": "221964b5488ab8b48cea68e54cb996a9",
 				"market_name": "kuaiyingyong"
 			}
