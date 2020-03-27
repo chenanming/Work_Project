@@ -29,7 +29,7 @@ class Recharge(BaseApi):
 		headers = {
 			"modelname": modelname,
 			"brandname": brandname,
-			"version": "3.1.5",
+			"version": "3.1.2",
 			"appsystem": "kuaiyingyong",
 			"imei": "868030036658167",
 			"content_type": "application/x-www-form-urlencoded; charset=utf-8"

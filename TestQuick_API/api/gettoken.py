@@ -30,6 +30,14 @@ class Login(BaseApi):
 				"key": "894fae147eb623e18c6564b564397808",
 				"content-type": "application/x-www-form-urlencoded; charset=utf-8"
 			}
+			params = {
+				"Uid": "5d20dfe6dc75c465",
+				"only_code": "5d20dfe6dc75c465",
+				"app_type": "32",  # 悠书云小说：32  言湘书城：34
+				"deviceCode": "221964b5488ab8b48cea68e54cb996a9",
+				"market_name": "kuaiyingyong"
+			}
+
 		elif ProjectName == 'QuickAPP_ysy':
 			headers = {
 				"modelname": "MI 6",
@@ -43,3 +51,4 @@ class Login(BaseApi):
 			}
 		else:
 			print("请输如项目名：")
+
