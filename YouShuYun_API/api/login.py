@@ -121,5 +121,5 @@ class QuickLogin(BaseApi):
 
 if __name__ == "__main__":
 	q = QuickLogin()
-	#q.save_device_id()
+	q.save_device_id()
 	print(q.token)
