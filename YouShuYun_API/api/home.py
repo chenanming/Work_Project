@@ -24,7 +24,8 @@ class Recharge(BaseApi):
 		params = {
 			"app_type": 32,
 			"market_name": "kuaiyingyong",
-			"token": QuickLogin.token
+			"token": QuickLogin.token,
+			"sign": ""
 		}
 		headers = {
 			"modelname": modelname,

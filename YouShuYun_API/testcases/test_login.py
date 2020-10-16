@@ -9,27 +9,6 @@ from unittest import TestCase
 from YouShuYun_API.api.login import QiLogin, QuickLogin
 
 
-class TestQiyouLogin:
-	# 奇优APP登录接口
-
-	login = QiLogin()
-	def setup_class(self):
-		pass
-
-	def test_wechat_login(self):
-		res = self.login.wechat_login()
-		assert res[0]['code'] == 1
-
-	def test_qq_login(self):
-		pass
-
-
-class TestYouLogin:
-	# 悠书云阅读APP登录接口
-	pass
-
-
-
 class TestQuickLogin:
 	# 悠书云小说（快应用）登录接口
 

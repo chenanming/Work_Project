@@ -53,13 +53,6 @@ class QiLogin(BaseApi):
 	def phone_login(self):
 		pass
 
-
-@pytest.mark.youshutest
-class YouLogin:
-	# 悠书云阅读APP
-	pass
-
-
 @pytest.mark.quicktest
 class QuickLogin(BaseApi):
 	# 悠书云小说(快应用)
@@ -73,7 +66,7 @@ class QuickLogin(BaseApi):
 		"appsystem": "kuaiyingyong",
 		"imei": "868030036658167",
 		"brandname": "xiaomi",
-		"version": "3.1.3",
+		"version": "3.2.1",
 		"androidid": "5d20dfe6dc75c465",
 		"key": "894fae147eb623e18c6564b564397808",
 		"content-type": "application/x-www-form-urlencoded; charset=utf-8"
@@ -81,16 +74,19 @@ class QuickLogin(BaseApi):
 
 	@classmethod
 	def save_device_id(cls):
+		params = {
+			"Uid": "5d20dfe6dc75c465",
+			"app_type": "32",  # 悠书云小说：32  言湘书城：34
+			"deviceCode": "221964b5488ab8b48cea68e54cb996a9",
+			"market_name": "kuaiyingyong",
+			"key": "",
+			"mobile": "MI 6",
+			"sign": ""
+		}
+		params = cls.sign_body(params)
 		# 缓存token，先定义一个空值变量token
 		if cls.token == None:
-			params = {
-				"Uid": "5d20dfe6dc75c465",
-				"only_code": "5d20dfe6dc75c465",
-				"app_type": "32",  # 悠书云小说：32  言湘书城：34
-				"deviceCode": "221964b5488ab8b48cea68e54cb996a9",
-				"market_name": "kuaiyingyong"
-			}
-			res = requests.post(url=cls._save_id_url, headers=cls.headers, params=params).json()
+			res = requests.request("POST", url=cls._save_id_url, headers=cls.headers, params=params).json()
 			cls.versed(res)
 			cls.token = res["data"]["token"]
 		return QuickLogin.token  # QuickLogin类的实例，供全局调用
