@@ -2,11 +2,11 @@
 # _*_ coding: utf-8 _*_
 # @Author: ChenAnming
 # @Time: 2019/12/30 0030 17:45
-# @File: test_home.py
+# @File: test_rechargemoney.py
 # @Poject: Work_Project
 
 import pytest, allure
-from YouShuYun_API.api.home import Recharge
+from YouShuYun_API.api.rechargemoney import Recharge
 
 class TestRecharge:
 	rec = Recharge()
@@ -22,6 +22,6 @@ class TestRecharge:
 		("MI 5", "XIAOMI")
 	])
 	def test_01(self, modelname, brandname):
-		data = self.rec.recharge_price(modelname, brandname)
+		data = self.rec.recharge_money(modelname, brandname)
 		print(data)
 		#assert data['data'][0]['price'] != 0

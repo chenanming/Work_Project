@@ -2,11 +2,11 @@
 # _*_ coding: utf-8 _*_
 # @Author: ChenAnming
 # @Time: 2019/12/9 0009 17:28
-# @File: test_login.py
+# @File: test_get_token.py
 # @Poject: Work_Project
 
 from unittest import TestCase
-from YouShuYun_API.api.login import QiLogin, QuickLogin
+from YouShuYun_API.api.get_token import QiLogin, QuickLogin
 
 
 class TestQuickLogin:

@@ -2,14 +2,12 @@
 # _*_ coding: utf-8 _*_
 # @Author: ChenAnming
 # @Time: 2019/12/9 0009 16:19
-# @File: login.py
+# @File: get_token.py
 # @Poject: Work_Project
 
 import requests
-import pytest, json
-import self as self
+import pytest
 
-from unit.json_format import JsonData
 from YouShuYun_API.api.base_api import BaseApi
 '''
 proxies = {
@@ -83,7 +81,8 @@ class QuickLogin(BaseApi):
 			"mobile": "MI 6",
 			"sign": ""
 		}
-		params = cls.sign_body(params)
+		params = cls.sign(body=params)
+		print(params)
 		# 缓存token，先定义一个空值变量token
 		if cls.token == None:
 			res = requests.request("POST", url=cls._save_id_url, headers=cls.headers, params=params).json()
