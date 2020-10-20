@@ -8,11 +8,11 @@
 import requests
 from YouShuYun_API.api.base_api import BaseApi
 from YouShuYun_API.api.get_token import QuickLogin
+from collections import Iterable
 
-class Recharge(BaseApi):
+class Recharge(QuickLogin):
 	url = "http://testapi.ad6755.com/rechargemoney"
-	@classmethod
-	def recharge_money(cls, modelname, brandname):
+	def recharge_money(self, modelname, brandname):
 		proxies = {
 			'http': 'http://127.0.0.1:8888/',
 			'https': 'http://127.0.0.1:8888/',
@@ -20,10 +20,9 @@ class Recharge(BaseApi):
 		params = {
 			"app_type": 32,
 			"market_name": "kuaiyingyong",
-			"token": QuickLogin.save_device_id(),
+			"token": self.get_token(),
 			"sign": ""
 		}
-		print(params)
 		headers = {
 			"modelname": modelname,
 			"brandname": brandname,
@@ -32,16 +31,18 @@ class Recharge(BaseApi):
 			"imei": "868030036658167",
 			"content_type": "application/x-www-form-urlencoded; charset=utf-8"
 		}
-		params = cls.sign(params)
 		print(params)
-		res = requests.request("POST", cls.url, params=params, headers=headers,
-							proxies=proxies,  # 映射指定的代理的url
-							verify=True).json()
-		cls.versed(res)
+		params = self.sign(params)
+		res = requests.request("POST", url=self.url, params=params, headers=headers,
+							# proxies=proxies,  # 映射指定的代理的url
+							# verify=False
+							   ).json()
+		self.versed(res)
 		return res
 
 
-if __name__ == "__main__":
-	modelname = "MI 5"
-	brandname = "miaomi"
-	print(Recharge.recharge_money(modelname, brandname))
+# if __name__ == "__main__":
+# 	modelname = "MI 6"
+# 	brandname = "Xiaomi"
+# 	res = Recharge()
+# 	res.recharge_money(modelname, brandname)

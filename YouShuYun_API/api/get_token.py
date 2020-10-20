@@ -5,16 +5,13 @@
 # @File: get_token.py
 # @Poject: Work_Project
 
+import os
 import requests
 import pytest
-
 from YouShuYun_API.api.base_api import BaseApi
-'''
-proxies = {
-	'http': 'http://127.0.0.1:8888/',
-	'https': 'http://127.0.0.1:8888/'
-}
-'''
+from ruamel import yaml
+
+
 class QiLogin(BaseApi):
 	# 奇优APP
 
@@ -51,10 +48,10 @@ class QiLogin(BaseApi):
 	def phone_login(self):
 		pass
 
+'''悠书云小说(快应用)'''
 @pytest.mark.quicktest
 class QuickLogin(BaseApi):
-	# 悠书云小说(快应用)
-
+	caches = {}
 	token = None
 	_save_id_url = "http://testapi.ad6755.com/save_device_id"
 	_login_url = "http://testapi.ad6755.com/checkSms"
@@ -70,8 +67,14 @@ class QuickLogin(BaseApi):
 		"content-type": "application/x-www-form-urlencoded; charset=utf-8"
 	}
 
+	# cases, list_params = BaseApi.get_test_data("../Work_Project/YouShuYun_API/data/save_device_id.yaml")
 	@classmethod
+	# @pytest.mark.parametrize("cases,http,expected", list(list_params), ids=cases)
 	def save_device_id(cls):
+		proxies = {
+			'http': 'http://127.0.0.1:8888/',
+			'https': 'http://127.0.0.1:8888/',
+		}
 		params = {
 			"Uid": "5d20dfe6dc75c465",
 			"app_type": "32",  # 悠书云小说：32  言湘书城：34
@@ -81,22 +84,32 @@ class QuickLogin(BaseApi):
 			"mobile": "MI 6",
 			"sign": ""
 		}
-		params = cls.sign(body=params)
-		print(params)
+		params = cls.sign(params)
 		# 缓存token，先定义一个空值变量token
 		if cls.token == None:
-			res = requests.request("POST", url=cls._save_id_url, headers=cls.headers, params=params).json()
+			res = requests.request("POST", url=cls._save_id_url, headers=cls.headers, params=params, proxies=proxies).json()
 			cls.versed(res)
 			cls.token = res["data"]["token"]
+		try:
+			cls.caches["token"] = cls.token
+			print(cls.caches)
+			with open("F:\chenanming\Work_Project\YouShuYun_API\data\caches.ymal", "w", encoding='utf-8') as f:
+				yaml.dump(cls.caches, f, Dumper=yaml.RoundTripDumper)
+		except:
+			print("token缓存写入失败！")
+
 		return QuickLogin.token  # QuickLogin类的实例，供全局调用
 
 	def get_user_info(self):
 		params = {
 			"app_type": "32",
 			"market_name": "kuaiyingyong",
-			"token": QuickLogin.token
+			"token": self.token,
+			"sign": ""
 		}
-		res = requests.post(self._user_info_url, headers=self.headers, params=params).json()
+		params = self.sign(params)
+		res = requests.request("POST", url=self._user_info_url, headers=self.headers, params=params).json()
+		# print(res.request.body)
 		self.versed(res)
 		return res
 
@@ -112,9 +125,11 @@ class QuickLogin(BaseApi):
 		}
 		res = requests.post(self._login_url, headers=self.headers, params=params).json()
 		self.versed(res)
+		print(res.url)
 		return res
 
-if __name__ == "__main__":
-	q = QuickLogin()
-	q.save_device_id()
-	print(q.token)
+# if __name__ == "__main__":
+# 	q = QuickLogin()
+# 	q.save_device_id()
+# 	# q.get_user_info()
+# 	# print(q.token)

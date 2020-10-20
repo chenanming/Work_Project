@@ -10,9 +10,10 @@ import base64
 import requests
 from YouShuYun_API.utils.json_format import JsonData
 from YouShuYun_API.utils.create_sign import JiaMi
+from YouShuYun_API.utils.commlib import ReadTestYaml
+from YouShuYun_API.utils.read_yaml import ReadYaml
 
 class BaseApi:
-
 	@classmethod
 	def versed(cls, json_object):
 		print(JsonData.format(json_object))  # 使用Utils的format()方法对json数据（r），格式化输出
@@ -35,6 +36,14 @@ class BaseApi:
 	@classmethod
 	def sign(cls, body):
 		return JiaMi.sign_body(body)
+
+	@classmethod
+	def get_test_data(cls, test_data_path):
+		return ReadTestYaml.get_test_data(test_data_path)
+
+	@classmethod
+	def get_token(cls):
+		return ReadYaml.get_token_cache("F:\chenanming\Work_Project\YouShuYun_API\data\caches.yaml")
 
 # if __name__ == "__main__":
 # 	body = {
