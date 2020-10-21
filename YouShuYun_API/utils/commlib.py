@@ -6,6 +6,8 @@
 # @Poject: Work_Project
 
 from ruamel import yaml
+import requests
+import pytest
 
 '''读取.ymal文件，获取测试参数'''
 class ReadTestYaml:
@@ -14,21 +16,15 @@ class ReadTestYaml:
 		http = []
 		expected = []
 		with open(test_data_path, 'r', encoding='utf-8') as f:
-			data = yaml.load(f.read(), Loader=yaml.Loader)
+			data = yaml.load(f.read(), Loader=yaml.SafeLoader)
 			test = data['tests']
-			print(test)
 			for td in test:
-				case.append(td.get(''))
-				http.append(td.get('headers', {}))
-				expected.append(td.get('exepted', {}))
-				print(td)
-				print(case)
-				print(type(case))
-				print(type(http))
-				print(type(expected))
+				case.append(td.get('case', ''))
+				http.append(td.get('http', {}))
+				expected.append(td.get('expected', {}))
 		paramesters = zip(case, http, expected)
 		return case, expected
 
-if __name__ == "__main__":
-	a = ReadTestYaml()
-	a.get_test_data("F:\chenanming\Work_Project\YouShuYun_API\data\save_device_id.yaml")
+# if __name__ == "__main__":
+# 	a = ReadTestYaml()
+# 	cases, list_params =a.get_test_data("F:\chenanming\Work_Project\YouShuYun_API\data\save_device_id.yaml")

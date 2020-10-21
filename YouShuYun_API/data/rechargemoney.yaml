@@ -1,9 +1,9 @@
 ---
 tests:
-- case: 获取token
+- case: 验证充值档位
   http:
     method: POST
-    path: /save_device_id
+    path: /rechargemoney
     headers:
       modelname: Mi 6
       brandname: Xiaomi
@@ -11,17 +11,11 @@ tests:
       version: 3.2.1
       androidid: 5d20dfe6dc75c465
       imei: "868030036658167"
-      cache-control: no-cache
       Content-Type: application/x-www-form-urlencoded
-      Postman-Token: 17fbb1af-2aed-492a-b05a-bc87bd9ddeb6
-      content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
     params:
-      Uid: 5d20dfe6dc75c465
       app_type: 32
-      deviceCode: 221964b5488ab8b48cea68e54cb996a9
       market_name: kuaiyingyong
-      key:
-      mobile: MI 6
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzMjY0OTk0LCJleHAiOjE2MDMzNTEzOTQsIm5iZiI6MTYwMzI2NDk5NCwianRpIjoicDJHUk9
       sign:
   expected:
     response:

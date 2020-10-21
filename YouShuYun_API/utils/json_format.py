@@ -6,14 +6,9 @@
 # @Poject: Work_Project
 
 import json
-from jsonpath import jsonpath
 
 class JsonData:
 
 	@classmethod
 	def format(cls, json_format):
 		return json.dumps(json_format, indent=2)
-
-	@classmethod
-	def jsonpath(cls, json_object, expr):
-		return jsonpath(json_object, expr)

@@ -2,7 +2,7 @@
 # _*_ coding: utf-8 _*_
 # @Author: ChenAnming
 # @Time: 2019/12/9 0009 16:19
-# @File: get_token.py
+# @File: save_device_id.py
 # @Poject: Work_Project
 
 import os
@@ -67,9 +67,11 @@ class QuickLogin(BaseApi):
 		"content-type": "application/x-www-form-urlencoded; charset=utf-8"
 	}
 
-	# cases, list_params = BaseApi.get_test_data("../Work_Project/YouShuYun_API/data/save_device_id.yaml")
+	# cases, parameters = BaseApi.get_test_data("F:\chenanming\Work_Project\YouShuYun_API\data\save_device_id.yaml")
+	# list_params = list(parameters)
+	# @pytest.mark.parametrize("cases,http,expected", list_params, ids=cases)
+	# @pytest.mark.datafile('F:\chenanming\Work_Project\YouShuYun_API\data\save_device_id.yaml')
 	@classmethod
-	# @pytest.mark.parametrize("cases,http,expected", list(list_params), ids=cases)
 	def save_device_id(cls):
 		proxies = {
 			'http': 'http://127.0.0.1:8888/',
@@ -87,13 +89,18 @@ class QuickLogin(BaseApi):
 		params = cls.sign(params)
 		# 缓存token，先定义一个空值变量token
 		if cls.token == None:
-			res = requests.request("POST", url=cls._save_id_url, headers=cls.headers, params=params, proxies=proxies).json()
+			res = requests.request("POST", \
+								   url=cls._save_id_url, \
+								   headers=cls.headers, \
+								   params=params, \
+								   # proxies=proxies\
+								   ).json()
 			cls.versed(res)
 			cls.token = res["data"]["token"]
 		try:
 			cls.caches["token"] = cls.token
 			print(cls.caches)
-			with open("F:\chenanming\Work_Project\YouShuYun_API\data\caches.ymal", "w", encoding='utf-8') as f:
+			with open("F:\chenanming\Work_Project\YouShuYun_API\data\caches.yaml", "w", encoding='utf-8') as f:
 				yaml.dump(cls.caches, f, Dumper=yaml.RoundTripDumper)
 		except:
 			print("token缓存写入失败！")
@@ -128,8 +135,8 @@ class QuickLogin(BaseApi):
 		print(res.url)
 		return res
 
-# if __name__ == "__main__":
-# 	q = QuickLogin()
-# 	q.save_device_id()
-# 	# q.get_user_info()
-# 	# print(q.token)
+if __name__ == "__main__":
+	q = QuickLogin()
+	q.save_device_id()
+	# q.get_user_info()
+	print(q.token)
