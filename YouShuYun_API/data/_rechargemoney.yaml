@@ -1,0 +1,62 @@
+---
+tests:
+- case: 验证充值档位
+  http:
+    method: POST
+    path: /rechargemoney
+    headers:
+      modelname: Mi 6
+      brandname: Xiaomi
+      appsystem: kuaiyingyong
+      version: 3.2.1
+      androidid: 5d20dfe6dc75c465
+      imei: "868030036658167"
+      Content-Type: application/x-www-form-urlencoded
+    params:
+      app_type: 32
+      market_name: kuaiyingyong
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzMzM1NjM4LCJleHAiOjE2MDM0MjIwMzgsIm5iZiI6MTYwMzMzNTYzOCwianRpIjoienVQMXoyNjU2dWRkTUhSWCIsInN1YiI6MTU1Mn0.tctkYddz7G2Rr88RJB8UaQD7rN5f0uukeGW7c_yTN9E
+  expected:
+    response:
+      code:
+        - 1
+      pay_model:
+        - 20
+      price:
+        - 29
+        - 49
+        - 9.9
+        - 39
+        - 50
+        - 100
+        - 499
+- case: 验证充值档位
+  http:
+    method: POST
+    path: /rechargemoney
+    headers:
+      modelname: OPPO Find x
+      brandname: oppo
+      appsystem: kuaiyingyong
+      version: 3.2.1
+      androidid: 5d20dfe6dc75c465
+      imei: "868030036658167"
+      Content-Type: application/x-www-form-urlencoded
+    params:
+      app_type: 32
+      market_name: kuaiyingyong
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzMzM1NjM4LCJleHAiOjE2MDM0MjIwMzgsIm5iZiI6MTYwMzMzNTYzOCwianRpIjoienVQMXoyNjU2dWRkTUhSWCIsInN1YiI6MTU1Mn0.tctkYddz7G2Rr88RJB8UaQD7rN5f0uukeGW7c_yTN9E
+  expected:
+    response:
+      code:
+        - 1
+      pay_model:
+        - 20
+      price:
+        - 29
+        - 49
+        - 9.9
+        - 39
+        - 50
+        - 100
+        - 499

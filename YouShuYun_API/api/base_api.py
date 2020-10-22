@@ -71,12 +71,14 @@ class BaseApi():
 		lists.clear()
 		return body
 
+	@classmethod
 	# 封装获取yaml文件格式的，测试数据
-	def get_test_data(self, test_data_path):
+	def get_test_data(cls, test_data_path):
 		case = []  # 存储测试用例名称
 		http = []  # 存储请对象
 		expected = []  # 存储预期结果
-		with open(test_data_path, encoding='utf-8') as f:
+		print(test_data_path)
+		with open(test_data_path, 'r', encoding='utf-8') as f:
 			dat = yaml.load(f.read(), Loader=yaml.SafeLoader)
 			test = dat['tests']
 			for td in test:
@@ -91,26 +93,19 @@ class BaseApi():
 		token = cls.load_yaml("F:\chenanming\Work_Project\YouShuYun_API\data\caches.yaml")
 		return token['token']
 
-if __name__ == "__main__":
-	# da = BaseApi()
-	# cases, list_params = da.get_test_data("F:\chenanming\Work_Project\YouShuYun_API\data\rechargemoney.yaml")
-	#
-	#
-	# @pytest.mark.parametrize("case,http,expected", list(list_params), ids=cases)
-	# def test_in_theaters(self, env, case, http, expected, preparation):
-	# 	r = requests.request(http["method"],
-	# 						 url=env["host"]["douban"] + http["path"],
-	# 						 headers=http["headers"],
-	# 						 params=http["params"])
-	# 	response = r.json()
-	# 	print(response)
-	body = {
-		"app_type": "32",  # 悠书云小说：32  言湘书城：34
-		"deviceCode": "221964b5488ab8b48cea68e54cb996a9",
-		"Uid": "5d20dfe6dc75c465",
-		"market_name": "kuaiyingyong",
-		"key": "",
-		"mobile": "MI 6",
-		"sign": ""
-	}
-	print(BaseApi.sign(body))
+# if __name__ == "__main__":
+# 	body = {
+#     "code": 1,
+#     "msg": "成功！",
+#     "data": {
+#         "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzMzQzNDk2LCJleHAiOjE2MDM0Mjk4OTYsIm5iZiI6MTYwMzM0MzQ5NiwianRpIjoiMnhOZ2o2dm9SczJXWHdGWiIsInN1YiI6MTU1Mn0._1b-m6jUICFmvG4iS4MMymgaLZqzY_vffI6q60YhBLA",
+#         "is_new": 0,
+#         "exp": "2020-10-28 13:11:36"
+#     }
+# }
+# 	token = BaseApi.jsonpath(body, '$.data.token')
+# 	msg = BaseApi.jsonpath(body, '$.[msg]')
+# 	print(token)
+# 	print(msg)
+# 	assert token != None
+# 	assert msg == "成功！"
