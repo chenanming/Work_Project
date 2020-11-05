@@ -10,7 +10,7 @@ import pytest
 import json
 from ruamel import yaml
 
-def pytest_generate_tests(metafunc):
+def pytest_generate_tests(metafunc: "Metafunc") -> None:
 	ids = []
 	markers = metafunc.definition.own_markers
 	for marker in markers:

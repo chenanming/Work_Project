@@ -15,7 +15,7 @@ tests:
     params:
       app_type: 32
       market_name: kuaiyingyong
-      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzMzM1NjM4LCJleHAiOjE2MDM0MjIwMzgsIm5iZiI6MTYwMzMzNTYzOCwianRpIjoienVQMXoyNjU2dWRkTUhSWCIsInN1YiI6MTU1Mn0.tctkYddz7G2Rr88RJB8UaQD7rN5f0uukeGW7c_yTN9E
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzOTUzMDM1LCJleHAiOjE2MDQwMzk0MzUsIm5iZiI6MTYwMzk1MzAzNSwianRpIjoiUFBTSG5CNVB2a2VnVnZwSiIsInN1YiI6MTU1Mn0.btBSzP8eWL9JhQePak5_zXhisWzHRCZLaK2F4Hw181Y
   expected:
     response:
       code:
@@ -45,7 +45,7 @@ tests:
     params:
       app_type: 32
       market_name: kuaiyingyong
-      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzMzM1NjM4LCJleHAiOjE2MDM0MjIwMzgsIm5iZiI6MTYwMzMzNTYzOCwianRpIjoienVQMXoyNjU2dWRkTUhSWCIsInN1YiI6MTU1Mn0.tctkYddz7G2Rr88RJB8UaQD7rN5f0uukeGW7c_yTN9E
+      token: ${ENV(token)}
   expected:
     response:
       code:

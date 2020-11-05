@@ -1,6 +1,5 @@
----
 tests:
-- case: 获取token
+- case: 验证
   http:
     method: POST
     path: /save_device_id
@@ -20,9 +19,6 @@ tests:
       app_type: 32
       deviceCode: 221964b5488ab8b48cea68e54cb996a9
       market_name: kuaiyingyong
-      key:
       mobile: MI 6
-      sign:
-  expected:
-    response:
-      code: 1
+  extract:
+    - token: connect.body.token

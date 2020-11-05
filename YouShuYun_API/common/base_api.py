@@ -15,6 +15,7 @@ from jsonpath import jsonpath
 from YouShuYun_API.utils.json_format import JsonData
 from YouShuYun_API.utils.commlib import ReadTestYaml
 
+
 class BaseApi():
 	'''
 	versed:
@@ -90,22 +91,9 @@ class BaseApi():
 
 	@classmethod
 	def get_token(cls):
-		token = cls.load_yaml("F:\chenanming\Work_Project\YouShuYun_API\data\caches.yaml")
+		token = cls.load_yaml("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml")
 		return token['token']
 
-# if __name__ == "__main__":
-# 	body = {
-#     "code": 1,
-#     "msg": "成功！",
-#     "data": {
-#         "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzMzQzNDk2LCJleHAiOjE2MDM0Mjk4OTYsIm5iZiI6MTYwMzM0MzQ5NiwianRpIjoiMnhOZ2o2dm9SczJXWHdGWiIsInN1YiI6MTU1Mn0._1b-m6jUICFmvG4iS4MMymgaLZqzY_vffI6q60YhBLA",
-#         "is_new": 0,
-#         "exp": "2020-10-28 13:11:36"
-#     }
-# }
-# 	token = BaseApi.jsonpath(body, '$.data.token')
-# 	msg = BaseApi.jsonpath(body, '$.[msg]')
-# 	print(token)
-# 	print(msg)
-# 	assert token != None
-# 	assert msg == "成功！"
+if __name__ == "__main__":
+	token = BaseApi.get_token()
+	print(token)

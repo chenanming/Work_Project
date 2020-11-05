@@ -8,7 +8,7 @@
 import os
 import requests
 import pytest
-from YouShuYun_API.api.base_api import BaseApi
+from YouShuYun_API.common.base_api import BaseApi
 from ruamel import yaml
 
 
@@ -53,7 +53,7 @@ class QiLogin(BaseApi):
 class QuickLogin(BaseApi):
 	caches = {}
 	token = None
-	_save_id_url = "http://testapi.ad6755.com/save_device_id"
+	_save_id_url ="http://testapi.ad6755.com/save_device_id"
 	_login_url = "http://testapi.ad6755.com/checkSms"
 	_user_info_url = "http://testapi.ad6755.com/get_user_info"
 	headers = {
@@ -67,10 +67,6 @@ class QuickLogin(BaseApi):
 		"content-type": "application/x-www-form-urlencoded; charset=utf-8"
 	}
 
-	# cases, parameters = BaseApi.get_test_data("F:\chenanming\Work_Project\YouShuYun_API\data\save_device_id.yaml")
-	# list_params = list(parameters)
-	# @pytest.mark.parametrize("cases,http,expected", list_params, ids=cases)
-	# @pytest.mark.datafile('F:\chenanming\Work_Project\YouShuYun_API\data\save_device_id.yaml')
 	@classmethod
 	def save_device_id(cls):
 		proxies = {
@@ -92,8 +88,9 @@ class QuickLogin(BaseApi):
 			res = requests.request("POST", \
 								   url=cls._save_id_url, \
 								   headers=cls.headers, \
-								   params=params, \
+								   json=params, \
 								   # proxies=proxies\
+								   # verify=False
 								   ).json()
 			cls.versed(res)
 			cls.token = res["data"]["token"]
@@ -104,7 +101,6 @@ class QuickLogin(BaseApi):
 				yaml.dump(cls.caches, f, Dumper=yaml.RoundTripDumper)
 		except:
 			print("token缓存写入失败！")
-
 		return QuickLogin.token  # QuickLogin类的实例，供全局调用
 
 	def get_user_info(self):
@@ -139,4 +135,4 @@ if __name__ == "__main__":
 	q = QuickLogin()
 	q.save_device_id()
 	# q.get_user_info()
-	print(q.token)
+	# print(q.token)
