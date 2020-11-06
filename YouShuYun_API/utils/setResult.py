@@ -12,11 +12,10 @@
 from requests import Response
 from YouShuYun_API.utils.logger import log
 from YouShuYun_API.common.RegExp import regexps as reg
-# from YouShuYun_API.common.excelset import excel_set
+from YouShuYun_API.common.yamlset import yaml_set
 from YouShuYun_API.common.variable import is_vars
 from YouShuYun_API.utils.serializa import is_json_str, deserialization
-from CF
-
+from YouShuYun_API.config.config import CF
 # reg = Regular()
 
 
@@ -28,8 +27,8 @@ def get_var_result(r: Response, number, case):
             is_vars.set(i, result)
             log.info(f"提取变量{i}={result}")
             if not is_vars.get(i):
-                excel_set.write_results(number, CF.EXTRACT_VARIABLE, f"提变量{i}失败")
-    excel_set.write_results(number, CF.RESPONSE_TEXT,
+                yaml_set.write_results(number, CF.EXTRACT_VARIABLE, f"提变量{i}失败")
+    yaml_set.write_results(number, CF.RESPONSE_TEXT,
                             f"ResponseCode：{r.status_code}\nResponseText：{r.text}")
 
 

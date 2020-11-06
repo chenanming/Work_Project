@@ -36,4 +36,4 @@ testinfo = ApiData()
 
 if __name__ == "__main__":
 	print(testinfo.info['test_info'])
-	print(testinfo.device['tests'][])
+	print(testinfo.device['tests'])

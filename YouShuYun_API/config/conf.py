@@ -16,4 +16,4 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 LOG_PATH = os.path.join(BASE_DIR, 'logs')
 
 if __name__ == "__main__":
-	print(BASE_DIR)
+	print(DATA_DIR)

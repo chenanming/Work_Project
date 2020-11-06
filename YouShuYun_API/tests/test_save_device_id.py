@@ -8,9 +8,8 @@ import requests
 import pytest
 import allure
 from ruamel import yaml
+from YouShuYun_API.common.variable import is_vars
 from YouShuYun_API.common.base_api import BaseApi
-from YouShuYun_API.utils.logger import log
-import pytest_cache
 
 
 cases, list_params = BaseApi.get_test_data("F:\chenanming\Work_Project\YouShuYun_API\data\save_device_id.yaml")
@@ -29,23 +28,27 @@ class TestSaveDeviceId(BaseApi):
 		print("打印setup")
 		pass
 
-	@pytest.fixture(scope="class")
-	def preparation(self):
-		print("在数据库中准备测试数据")
-		test_data = "在数据库中准备测试数据"
-		yield test_data
-		print("清理测试数据")
+	# @pytest.fixture(scope="class")
+	# def preparation(self):
+	# 	print("在数据库中准备测试数据")
+	# 	test_data = "在数据库中准备测试数据"
+	# 	yield test_data
+	# 	print("清理测试数据")
 
 	@allure.story("测试save_device_id接口")
-	@pytest.mark.parametrize("case,http,expected", list(list_params), ids=cases)
-	def test_save_device_id(self, case, http, expected, preparation):
-		res = requests.request(http["method"],
-							   url=self.host + http["path"],
-							   headers=http["headers"],
-							   params=self.sign(http["params"]),
+	@pytest.mark.datafile("save_device_id.yaml")
+	def test_save_device_id(self, parameters):
+		print(parameters)
+		res = requests.request(parameters["http"]["method"],
+							   url=self.host + parameters["http"]["path"],
+							   headers=parameters["http"]["headers"],
+							   params=self.sign(parameters["http"]["params"]),
 							   # proxies=self.proxies
 							   )
 		self.versed(res.json())
+		is_vars.set("token", res.json()['data']['token'])
+		to = is_vars.get("token")
+		print(to)
 		self.token = res.json()["data"]["token"]
 		try:
 			self.caches["token"] = self.token

@@ -2,33 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e63b7b95-ff2a-450d-bf0c-17669cd11acf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/common/RegExp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/common/YamlData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/common/excelset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/common/variable.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/common/yamlset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/config/conf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/data/demo.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/data/testinfo.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/logs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/tests/test_demo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/tests/test_save_device_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/utils/getresult.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/utils/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/utils/request.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/utils/serializa.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YouShuYun_API/utils/setResult.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YouShuYun_API/config/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YouShuYun_API/tests/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouShuYun_API/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/common/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouShuYun_API/api/base_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/common/base_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouShuYun_API/api/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/common/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouShuYun_API/api/save_device_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/common/save_device_id.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouShuYun_API/config/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/common/YamlData.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/common/YamlData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/common/conftest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/common/save_device_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/common/save_device_id.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/common/yamlset.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/common/yamlset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/config/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/config/conf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YouShuYun_API/data/_rechargemoney.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/data/_rechargemoney.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YouShuYun_API/data/save_device_id.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/data/save_device_id.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouShuYun_API/testcases/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouShuYun_API/testcases/test_get_token.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/tests/test_get_token.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YouShuYun_API/testcases/test_rechargemoney.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/tests/test_rechargemoney.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/tests/test_rechargemoney.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/tests/test_rechargemoney.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/tests/test_save_device_id.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/tests/test_save_device_id.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/utils/getresult.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/utils/getresult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YouShuYun_API/utils/setResult.py" beforeDir="false" afterPath="$PROJECT_DIR$/YouShuYun_API/utils/setResult.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,28 +26,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/demo.yaml">
+        <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/variable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="236">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/variable.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/RegExp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="231">
+              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding>
                 <element signature="e#142#151#0" expanded="true" />
               </folding>
@@ -71,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/getresult.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+            <state relative-caret-position="373">
+              <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
               <folding>
                 <element signature="e#145#158#0" expanded="true" />
               </folding>
@@ -81,54 +59,69 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_save_device_id.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+              <folding>
+                <element signature="e#156#171#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/setResult.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+              <folding>
+                <element signature="e#204#233#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_rechargemoney.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
+              <folding>
+                <element signature="e#156#169#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/logger.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+              <folding>
+                <element signature="e#142#151#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/YamlData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
+            <state relative-caret-position="756">
               <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/save_device_id.yaml">
+        <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/yamlset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/base_api.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="85" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="1003">
+              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
               <folding>
-                <element signature="e#146#157#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/request.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="128" column="61" selection-start-line="128" selection-start-column="61" selection-end-line="128" selection-end-column="61" />
-              <folding>
-                <element signature="e#143#154#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_demo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-              <folding>
-                <element signature="e#146#159#0" expanded="true" />
+                <element signature="e#144#157#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,17 +159,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/YouShuYun_API/testcases/test_recharge_price.py" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/api/recharge_price.py" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/utils/token.yml" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/data/login.json" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/utils/headers.yml" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/utils/get_test_data.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/data/test_save_device_id.yml" />
         <option value="$PROJECT_DIR$/YouShuYun_API/utils/caches.yml" />
         <option value="$PROJECT_DIR$/YouShuYun_API/api/get_token.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/utils/read_yaml.py" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/utils/json_format.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/utils/create_sign.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/config/conftest.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/data/caches.yaml" />
@@ -192,13 +178,10 @@
         <option value="$PROJECT_DIR$/YouShuYun_API/api/gol.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/api/base_api.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/cat.env" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/data/_rechargemoney.yaml" />
         <option value="$PROJECT_DIR$/YouShuYun_API/testcases/test_rechargemoney.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/testcases/test_save_device_id.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/api/save_device_id.py" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/config/conf.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/common/getresult.py" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/tests/test_rechargemoney.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/data/testInfo.yaml" />
         <option value="$PROJECT_DIR$/YouShuYun_API/common/data.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/utils/logger.py" />
@@ -210,13 +193,23 @@
         <option value="$PROJECT_DIR$/YouShuYun_API/common/variable.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/utils/request.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/common/base_api.py" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/tests/test_save_device_id.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/tests/test_demo.py" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/utils/setResult.py" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/data/save_device_id.yaml" />
-        <option value="$PROJECT_DIR$/YouShuYun_API/utils/getresult.py" />
         <option value="$PROJECT_DIR$/YouShuYun_API/data/demo.yaml" />
         <option value="$PROJECT_DIR$/YouShuYun_API/common/YamlData.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/common/save_device_id.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/data/save_device_id.yaml" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/common/conftest.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/config/conf.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/tests/conftest.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/config/caches.yaml" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/utils/json_format.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/data/_rechargemoney.yaml" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/config/config.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/utils/getresult.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/common/yamlset.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/utils/setResult.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/tests/test_save_device_id.py" />
+        <option value="$PROJECT_DIR$/YouShuYun_API/tests/test_rechargemoney.py" />
       </list>
     </option>
   </component>
@@ -234,7 +227,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,6 +279,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,16 +289,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\chenanming\Work_Project\YouShuYun_API\api" />
+      <recent name="F:\chenanming\Work_Project\YouShuYun_API\data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\chenanming\Work_Project\YouShuYun_API\tests" />
       <recent name="F:\chenanming\Work_Project\YouShuYun_API\common" />
       <recent name="F:\chenanming\Work_Project\YouShuYun_API\config" />
       <recent name="F:\chenanming\Work_Project\YouShuYun_API\data" />
       <recent name="F:\chenanming\Work_Project\YouShuYun_API\testcases" />
-      <recent name="F:\chenanming\Work_Project\YouShuYun_API" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\chenanming\Work_Project\YouShuYun_API\api" />
-      <recent name="F:\chenanming\Work_Project\YouShuYun_API\data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -320,8 +313,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.YamlData">
-    <configuration name="YamlData" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python tests.pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney">
+    <configuration name="conf" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Work_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -329,11 +322,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YouShuYun_API/common" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YouShuYun_API/config" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/YouShuYun_API/common/YamlData.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/YouShuYun_API/config/conf.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -342,28 +335,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="request" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Work_Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YouShuYun_API/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/YouShuYun_API/utils/request.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_demo.TestStandAlone" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Work_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -374,11 +346,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_demo.TestStandAlone&quot;" />
+      <option name="_new_target" value="&quot;test_rechargemoney.TestRechargeMoney.test_rechargemoney&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_demo.TestStandAlone.test_stand_alone_interface" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_save_device_id.TestSaveDeviceId" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Work_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -389,7 +361,22 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_demo.TestStandAlone.test_stand_alone_interface&quot;" />
+      <option name="_new_target" value="&quot;test_save_device_id.TestSaveDeviceId&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_save_device_id.TestSaveDeviceId.test_data_driven" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Work_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/YouShuYun_API/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_save_device_id.TestSaveDeviceId.test_data_driven&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -410,11 +397,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.YamlData" />
-        <item itemvalue="Python tests.pytest for test_demo.TestStandAlone.test_stand_alone_interface" />
-        <item itemvalue="Python tests.pytest for test_demo.TestStandAlone" />
+        <item itemvalue="Python tests.pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" />
         <item itemvalue="Python tests.pytest for test_save_device_id.TestSaveDeviceId.test_save_device_id" />
-        <item itemvalue="Python.request" />
+        <item itemvalue="Python tests.pytest for test_save_device_id.TestSaveDeviceId.test_data_driven" />
+        <item itemvalue="Python.conf" />
+        <item itemvalue="Python tests.pytest for test_save_device_id.TestSaveDeviceId" />
       </list>
     </recent_temporary>
   </component>
@@ -625,39 +612,46 @@
       <option name="project" value="LOCAL" />
       <updated>1603368531291</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="update">
+      <created>1604562603778</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1604562603778</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_demo_TestStandAlone_test_stand_alone_interface - 2020.11.04 at 19h 25m 28s.xml">
-      <configuration name="pytest for test_demo.TestStandAlone.test_stand_alone_interface" configurationId="tests" />
+    <history-entry file="pytest_for_test_rechargemoney_TestRechargeMoney_test_rechargemoney - 2020.11.06 at 16h 51m 55s.xml">
+      <configuration name="pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_demo_TestStandAlone_test_stand_alone_interface - 2020.11.04 at 19h 26m 10s.xml">
-      <configuration name="pytest for test_demo.TestStandAlone.test_stand_alone_interface" configurationId="tests" />
+    <history-entry file="pytest_for_test_rechargemoney_TestRechargeMoney_test_rechargemoney - 2020.11.06 at 16h 52m 11s.xml">
+      <configuration name="pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_demo_TestStandAlone_test_stand_alone_interface - 2020.11.04 at 19h 26m 42s.xml">
-      <configuration name="pytest for test_demo.TestStandAlone.test_stand_alone_interface" configurationId="tests" />
+    <history-entry file="pytest_for_test_rechargemoney_TestRechargeMoney_test_rechargemoney - 2020.11.06 at 16h 53m 16s.xml">
+      <configuration name="pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_save_device_id_TestSaveDeviceId_test_save_device_id - 2020.11.04 at 19h 30m 43s.xml">
+    <history-entry file="pytest_for_test_save_device_id_TestSaveDeviceId_test_save_device_id - 2020.11.06 at 18h 15m 59s.xml">
       <configuration name="pytest for test_save_device_id.TestSaveDeviceId.test_save_device_id" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_save_device_id_TestSaveDeviceId_test_save_device_id - 2020.11.04 at 19h 31m 31s.xml">
+    <history-entry file="pytest_for_test_save_device_id_TestSaveDeviceId_test_save_device_id - 2020.11.06 at 18h 17m 33s.xml">
       <configuration name="pytest for test_save_device_id.TestSaveDeviceId.test_save_device_id" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_save_device_id_TestSaveDeviceId_test_save_device_id - 2020.11.04 at 19h 32m 47s.xml">
+    <history-entry file="pytest_for_test_save_device_id_TestSaveDeviceId_test_save_device_id - 2020.11.06 at 18h 17m 47s.xml">
       <configuration name="pytest for test_save_device_id.TestSaveDeviceId.test_save_device_id" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_save_device_id_TestSaveDeviceId_test_save_device_id - 2020.11.04 at 19h 34m 47s.xml">
-      <configuration name="pytest for test_save_device_id.TestSaveDeviceId.test_save_device_id" configurationId="tests" />
+    <history-entry file="pytest_for_test_rechargemoney_TestRechargeMoney_test_rechargemoney - 2020.11.06 at 18h 18m 28s.xml">
+      <configuration name="pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_save_device_id_TestSaveDeviceId_test_save_device_id - 2020.11.04 at 19h 35m 45s.xml">
-      <configuration name="pytest for test_save_device_id.TestSaveDeviceId.test_save_device_id" configurationId="tests" />
+    <history-entry file="pytest_for_test_rechargemoney_TestRechargeMoney_test_rechargemoney - 2020.11.06 at 18h 19m 10s.xml">
+      <configuration name="pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_demo_TestStandAlone - 2020.11.04 at 19h 50m 44s.xml">
-      <configuration name="pytest for test_demo.TestStandAlone" configurationId="tests" />
+    <history-entry file="pytest_for_test_rechargemoney_TestRechargeMoney_test_rechargemoney - 2020.11.06 at 18h 20m 08s.xml">
+      <configuration name="pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_demo_TestStandAlone_test_stand_alone_interface - 2020.11.04 at 19h 50m 53s.xml">
-      <configuration name="pytest for test_demo.TestStandAlone.test_stand_alone_interface" configurationId="tests" />
+    <history-entry file="pytest_for_test_rechargemoney_TestRechargeMoney_test_rechargemoney - 2020.11.06 at 18h 20m 25s.xml">
+      <configuration name="pytest for test_rechargemoney.TestRechargeMoney.test_rechargemoney" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -678,14 +672,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.52606636" weight="0.3128371" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.82464457" visible="true" weight="0.36030206" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8225382" visible="true" weight="0.35490832" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39955604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.892575" weight="0.26105717" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49447078" weight="0.2416397" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.6945761" weight="0.37432578" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.17535545" side_tool="true" visible="true" weight="0.36030206" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.17746182" side_tool="true" visible="true" weight="0.35490832" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.764613" weight="0.44120818" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -774,57 +768,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/rechargemoney" />
-    <entry file="file://D:/ProgramData/Python36/Lib/logging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5778">
-          <caret line="349" selection-start-line="349" selection-end-line="350" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/config" />
-    <entry file="file://D:/ProgramData/Python36/Lib/re.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1160">
-          <caret line="190" selection-start-line="190" selection-end-line="190" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/jsonpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/ruamel/yaml/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/ruamel/yaml/tokens.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2310" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/ruamel/yaml/util.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/allure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/config/config" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/urllib3/util/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/urllib3/connection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -868,30 +811,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/getresult.py" />
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/cat.env" />
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/conftest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#146#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/save_device_id.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="113" column="21" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
-          <folding>
-            <element signature="e#151#160#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -903,13 +826,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/caches.yaml" />
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/config/caches.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/testinfo.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -918,16 +834,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/gol.py" />
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/excelset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="57" />
-          <folding>
-            <element signature="e#144#157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/serializa.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -962,64 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pluggy/manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/_rechargemoney.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_get_token.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#151#180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/config/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_rechargemoney.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="13" column="89" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="89" />
-          <folding>
-            <element signature="e#156#169#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_save_device_id.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#156#171#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/yamlset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/logs/202011.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -1027,19 +875,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/setResult.py">
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/demo.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="e#177#206#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
+        <state relative-caret-position="2457">
           <caret line="128" column="61" selection-start-line="128" selection-start-column="61" selection-end-line="128" selection-end-column="61" />
           <folding>
             <element signature="e#143#154#0" expanded="true" />
@@ -1047,27 +892,174 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/_pytest/config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/_pytest/assertion/rewrite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/save_device_id.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-566">
+          <caret line="92" column="49" lean-forward="true" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
+          <folding>
+            <element signature="e#151#160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pytest_assume/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/ProgramData/Python36/Lib/importlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/_jb_pytest_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/importlib_metadata/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
           <folding>
             <element signature="e#146#159#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/save_device_id.yaml">
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_get_token.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        <state relative-caret-position="50">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#151#180#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/logger.py">
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/ruamel/yaml/reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="187">
+          <caret line="296" selection-start-line="296" selection-end-line="296" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/save_device_id.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/config/caches.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="57" lean-forward="true" selection-start-column="7" selection-end-column="271" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pluggy/hooks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="285" selection-start-line="285" selection-end-line="285" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pluggy/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/conftest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding>
+            <element signature="e#145#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/_rechargemoney.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="43" column="68" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/json_format.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/base_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#146#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/config/config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/config/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="44" column="37" lean-forward="true" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/config/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/excelset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="27" column="57" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="57" />
+          <folding>
+            <element signature="e#144#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/RegExp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding>
             <element signature="e#142#151#0" expanded="true" />
           </folding>
@@ -1076,51 +1068,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/YamlData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
+        <state relative-caret-position="756">
           <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/base_api.py">
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/yamlset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="1003">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
           <folding>
-            <element signature="e#146#157#0" expanded="true" />
+            <element signature="e#144#157#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/data/demo.yaml">
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/logger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="588">
+          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+          <folding>
+            <element signature="e#142#151#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/getresult.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        <state relative-caret-position="373">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="e#145#158#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/variable.py">
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/utils/setResult.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="630">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding>
+            <element signature="e#204#233#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/RegExp.py">
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_save_device_id.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="268">
+          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
           <folding>
-            <element signature="e#142#151#0" expanded="true" />
+            <element signature="e#156#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/common/variable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YouShuYun_API/tests/test_rechargemoney.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#156#169#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -61,7 +61,7 @@ class QuickLogin(BaseApi):
 		"appsystem": "kuaiyingyong",
 		"imei": "868030036658167",
 		"brandname": "xiaomi",
-		"version": "3.2.1",
+		"version": "3.2.2",
 		"androidid": "5d20dfe6dc75c465",
 		"key": "894fae147eb623e18c6564b564397808",
 		"content-type": "application/x-www-form-urlencoded; charset=utf-8"
@@ -76,11 +76,11 @@ class QuickLogin(BaseApi):
 		params = {
 			"Uid": "5d20dfe6dc75c465",
 			"app_type": "32",  # 悠书云小说：32  言湘书城：34
-			"deviceCode": "221964b5488ab8b48cea68e54cb996a9",
+			"deviceCode": "93c2137932882c0308905681fd72c0c9",
 			"market_name": "kuaiyingyong",
 			"key": "",
 			"mobile": "MI 6",
-			"sign": ""
+			"sign": "e0f796044b2001fc0a844abef913b"
 		}
 		params = cls.sign(params)
 		# 缓存token，先定义一个空值变量token
@@ -88,8 +88,8 @@ class QuickLogin(BaseApi):
 			res = requests.request("POST", \
 								   url=cls._save_id_url, \
 								   headers=cls.headers, \
-								   json=params, \
-								   # proxies=proxies\
+								   params=params, \
+								   proxies=proxies\
 								   # verify=False
 								   ).json()
 			cls.versed(res)
@@ -97,7 +97,7 @@ class QuickLogin(BaseApi):
 		try:
 			cls.caches["token"] = cls.token
 			print(cls.caches)
-			with open("F:\chenanming\Work_Project\YouShuYun_API\data\caches.yaml", "w", encoding='utf-8') as f:
+			with open("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml", "w", encoding='utf-8') as f:
 				yaml.dump(cls.caches, f, Dumper=yaml.RoundTripDumper)
 		except:
 			print("token缓存写入失败！")

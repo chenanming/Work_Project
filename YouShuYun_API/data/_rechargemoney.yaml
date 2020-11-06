@@ -15,7 +15,7 @@ tests:
     params:
       app_type: 32
       market_name: kuaiyingyong
-      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjAzOTUzMDM1LCJleHAiOjE2MDQwMzk0MzUsIm5iZiI6MTYwMzk1MzAzNSwianRpIjoiUFBTSG5CNVB2a2VnVnZwSiIsInN1YiI6MTU1Mn0.btBSzP8eWL9JhQePak5_zXhisWzHRCZLaK2F4Hw181Y
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjA0NjQzNTEyLCJleHAiOjE2MDQ3Mjk5MTIsIm5iZiI6MTYwNDY0MzUxMiwianRpIjoiOXViSEdzbUZlM3M3ZVJxayIsInN1YiI6MTU1Mn0.aMoWj7rB-F_tPLDjhttz8CtWWW43RP5d1w69zFks9oA
   expected:
     response:
       code:
@@ -41,11 +41,11 @@ tests:
       version: 3.2.1
       androidid: 5d20dfe6dc75c465
       imei: "868030036658167"
-      Content-Type: application/x-www-form-urlencoded
+      Content-Type: application/x-www-form-urlencoded; charset=UTF-8
     params:
       app_type: 32
       market_name: kuaiyingyong
-      token: ${ENV(token)}
+      token: $token
   expected:
     response:
       code:

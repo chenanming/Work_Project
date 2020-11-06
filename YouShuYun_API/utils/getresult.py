@@ -6,12 +6,10 @@
 # @Poject: Work_Project
 import pytest
 import allure
-import pytest_assume
 from requests import Response
 from YouShuYun_API.utils.logger import log
 from YouShuYun_API.common.variable import is_vars
 from YouShuYun_API.common.RegExp import regexps
-from YouShuYun_API.common.base_api import
 
 def get_result(r: Response, extract):
 	'''获取response返回值'''

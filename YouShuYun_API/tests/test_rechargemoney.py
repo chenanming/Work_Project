@@ -9,9 +9,8 @@ import pytest
 import allure
 import requests
 from YouShuYun_API.common.base_api import BaseApi
-import YouShuYun_API.common.gol as glo
+from YouShuYun_API.common.variable import is_vars
 
-cases, list_params = BaseApi.get_test_data("F:\chenanming\Work_Project\YouShuYun_API\data\_rechargemoney.yaml")
 
 
 class TestRechargeMoney(BaseApi):
@@ -67,18 +66,21 @@ class TestRechargeMoney(BaseApi):
 
 
 	@allure.story("不同机型的,不同充值档位")
-	@pytest.mark.parametrize("case,http,expected", list(list_params), ids=cases)
-	def test_rechargemoney(self, case, http, expected, preparation):
-		res = requests.request(http['method'],
-							 url=self.host + http['path'],
-							 headers=http['headers'],
-							 params=self.sign(http['params']),
+	@pytest.mark.datafile("_rechargemoney.yaml")
+	def test_rechargemoney(self, parameters):
+		res = requests.request(parameters["http"]['method'],
+							 url=self.host + parameters["http"]['path'],
+							 headers=parameters["http"]['headers'],
+							 params=self.sign(parameters["http"]['params']),
 							   # proxies=self.proxies,
 							   # verify=False
 							   )
 		self.versed(res.json())
-		print(res.url)
-		print(expected['response']['pay_model'])
-		print(self.jsonpath(res.json(), '$.data[*].price'))
-		assert self.jsonpath(res.json(), '$.data[0].pay_model') == expected['response']['pay_model']
-		assert self.jsonpath(res.json(), '$.data[*].price') == expected['response']['price']
+		to = is_vars.get("token")
+		print(to)
+		# expected = parameters["expected"]
+		# print(res.url)
+		# print(expected['response']['pay_model'])
+		# print(self.jsonpath(res.json(), '$.data[*].price'))
+		# assert self.jsonpath(res.json(), '$.data[0].pay_model') == expected['response']['pay_model']
+		# assert self.jsonpath(res.json(), '$.data[*].price') == expected['response']['price']
