@@ -62,9 +62,9 @@ class HttpRequest(object):
 				is_sub = regexps.findall(kwargs_str)
 				if is_sub:
 					new_kwargs_str = deserialization(regexps.subs(is_sub, kwargs_str))
-					log.info("Request Data: {}".format(new_kwargs_str))
+					log.info("Request Data1: {}".format(new_kwargs_str))
 					kwargs = new_kwargs_str
-			log.info("Request Data: {}".format(kwargs))
+			log.info("Request Data2: {}".format(kwargs))
 			if method == "GET":
 				response = self.r.get(url, **kwargs, headers=self.headers, timeout=self.timeout)
 			elif method == "POST":
@@ -126,4 +126,4 @@ def elapsed_time(func: Response, fixed: str = 's'):
 req = HttpRequest()
 if __name__ == "__main__":
 	path = "/save_device_id"
-	req.send_request(method="post", path=path,extract="token")
+	req.send_request(method="post", path=path, extract="token")

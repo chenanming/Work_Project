@@ -14,7 +14,7 @@ class RegExp(object):
 		self.re = re
 
 	def findall(self, string):
-		keys = self.re.findall(r"\{{(.*?)}\}", string)
+		keys = self.re.findall(r"\{(.*?)\}", string)
 		return keys
 
 	def subs(self, keys, string):
@@ -32,5 +32,29 @@ class RegExp(object):
 
 regexps = RegExp()
 if __name__ == "__main__":
-	a = "{'data': {'loginName': 18291900215, 'password': '{{tokenn}}', 'code': None, 'description': 'encrypt'}}"
+	a = {
+  "tests": {
+    "method": "POST",
+    "path": "/save_device_id",
+    "headers": {
+      "modelname": "Mi 6",
+      "brandname": "Xiaomi",
+      "appsystem": "kuaiyingyong",
+      "version": "3.2.1",
+      "androidid": "5d20dfe6dc75c465",
+      "imei": "868030036658167",
+      "cache-control": "no-cache",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Postman-Token": "17fbb1af-2aed-492a-b05a-bc87bd9ddeb6"
+    },
+    "params": {
+      "Uid": "5d20dfe6dc75c465",
+      "app_type": 32,
+      "deviceCode": "221964b5488ab8b48cea68e54cb996a9",
+      "market_name": "kuaiyingyong",
+      "mobile": "MI 6",
+      "token": "${token}$"
+    },
+  }
+}
 	print(regexps.findall(a))

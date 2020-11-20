@@ -40,3 +40,6 @@ def replace_param(case):
             if is_extract:
                 return deserialization(reg.subs(is_extract, case[CF.PARAMETER]))
     return deserialization(case[CF.PARAMETER])
+
+if __name__ == "__main__":
+	pass

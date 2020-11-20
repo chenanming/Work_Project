@@ -8,6 +8,7 @@ import requests
 import pytest
 import allure
 from ruamel import yaml
+from jinja2 import Template
 from YouShuYun_API.common.variable import is_vars
 from YouShuYun_API.common.base_api import BaseApi
 
@@ -46,9 +47,13 @@ class TestSaveDeviceId(BaseApi):
 							   # proxies=self.proxies
 							   )
 		self.versed(res.json())
+
+		tm = Template("{{ content.data.token }}")
+		token = tm.render(content=res.json())
+		print(token)
+
 		is_vars.set("token", res.json()['data']['token'])
 		to = is_vars.get("token")
-		print(to)
 		self.token = res.json()["data"]["token"]
 		try:
 			self.caches["token"] = self.token

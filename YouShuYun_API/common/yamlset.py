@@ -55,4 +55,4 @@ class YamlSet:
 
 yaml_set = YamlSet()
 if __name__ == '__main__':
-    print(excel_set.get_cases())
+    print(yaml_set.get_cases())

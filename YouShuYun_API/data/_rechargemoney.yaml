@@ -1,4 +1,5 @@
 ---
+token: dfaskdl
 tests:
 - case: 验证充值档位
   http:
@@ -15,13 +16,13 @@ tests:
     params:
       app_type: 32
       market_name: kuaiyingyong
-      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjA0NjQzNTEyLCJleHAiOjE2MDQ3Mjk5MTIsIm5iZiI6MTYwNDY0MzUxMiwianRpIjoiOXViSEdzbUZlM3M3ZVJxayIsInN1YiI6MTU1Mn0.aMoWj7rB-F_tPLDjhttz8CtWWW43RP5d1w69zFks9oA
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjA1NjgyMDgxLCJleHAiOjE2MDU3Njg0ODEsIm5iZiI6MTYwNTY4MjA4MSwianRpIjoiTHJQd3BOTzlEMnh2ZXF4ZSIsInN1YiI6MTU1Mn0.EvFf-ns4fwejAZP4j395_EEGwKf29YAB80_w0G1vqaM
   expected:
     response:
       code:
         - 1
       pay_model:
-        - 20
+        - 22
       price:
         - 29
         - 49
@@ -45,13 +46,13 @@ tests:
     params:
       app_type: 32
       market_name: kuaiyingyong
-      token: $token
+      token: "{{token}}"
   expected:
     response:
       code:
         - 1
       pay_model:
-        - 20
+        - 22
       price:
         - 29
         - 49

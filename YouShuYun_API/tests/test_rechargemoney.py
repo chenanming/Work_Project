@@ -8,6 +8,7 @@
 import pytest
 import allure
 import requests
+from YouShuYun_API.utils.request import req
 from YouShuYun_API.common.base_api import BaseApi
 from YouShuYun_API.common.variable import is_vars
 
@@ -68,6 +69,7 @@ class TestRechargeMoney(BaseApi):
 	@allure.story("不同机型的,不同充值档位")
 	@pytest.mark.datafile("_rechargemoney.yaml")
 	def test_rechargemoney(self, parameters):
+		print(parameters)
 		res = requests.request(parameters["http"]['method'],
 							 url=self.host + parameters["http"]['path'],
 							 headers=parameters["http"]['headers'],
@@ -76,11 +78,15 @@ class TestRechargeMoney(BaseApi):
 							   # verify=False
 							   )
 		self.versed(res.json())
-		to = is_vars.get("token")
-		print(to)
-		# expected = parameters["expected"]
-		# print(res.url)
+		# to = is_vars.get("token")
+		# print(to)
+		expected = parameters["expected"]
+		print(res.url)
 		# print(expected['response']['pay_model'])
 		# print(self.jsonpath(res.json(), '$.data[*].price'))
 		# assert self.jsonpath(res.json(), '$.data[0].pay_model') == expected['response']['pay_model']
 		# assert self.jsonpath(res.json(), '$.data[*].price') == expected['response']['price']
+
+	@pytest.mark.datafile("_rechargemoney.yaml")
+	def test_demo(self, parameters):
+		print(parameters)
