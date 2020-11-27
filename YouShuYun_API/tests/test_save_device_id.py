@@ -48,17 +48,17 @@ class TestSaveDeviceId(BaseApi):
 							   )
 		self.versed(res.json())
 
-		tm = Template("{{ content.data.token }}")
-		token = tm.render(content=res.json())
-		print(token)
-
-		is_vars.set("token", res.json()['data']['token'])
-		to = is_vars.get("token")
+		# tm = Template("{{ content.data.token }}")
+		# token = tm.render(content=res.json())
+		# print(token)
+		#
+		# is_vars.set("token", res.json()['data']['token'])
+		# to = is_vars.get("token")
 		self.token = res.json()["data"]["token"]
 		try:
 			self.caches["token"] = self.token
 			'''获取token，并写入caches.yaml文件'''
-			with open("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml", "w", encoding='utf-8') as f:
+			with open("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml", "a", encoding='utf-8') as f:
 				yaml.dump(self.caches, f, Dumper=yaml.RoundTripDumper)
 			print("token缓存写入成功！")
 		except:

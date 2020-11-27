@@ -11,4 +11,4 @@ class JsonData:
 
 	@classmethod
 	def format(cls, json_format):
-		return json.dumps(json_format, indent=2)
+		return json.dumps(json_format, indent=2, ensure_ascii=False)
