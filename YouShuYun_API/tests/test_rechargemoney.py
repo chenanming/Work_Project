@@ -24,12 +24,12 @@ class TestRechargeMoney(BaseApi):
 		'http': 'http://127.0.0.1:8888/',
 		'https': 'http://127.0.0.1:8888/',
 	}
-	params = {
-		"app_type": 32,
-		"market_name": "kuaiyingyong",
-		"token": BaseApi.get_token(),
-		"sign": ""
-	}
+	# params = {
+	# 	"app_type": 32,
+	# 	"market_name": "kuaiyingyong",
+	# 	"token": BaseApi.get_token(),
+	# 	"sign": ""
+	# }
 	def setup_class(self):
 		print("打印setup")
 		pass
@@ -70,6 +70,7 @@ class TestRechargeMoney(BaseApi):
 	@pytest.mark.datafile("_rechargemoney.yaml")
 	def test_rechargemoney(self, parameters):
 		print(parameters)
+		print(type(parameters))
 		res = requests.request(parameters["http"]['method'],
 							 url=self.host + parameters["http"]['path'],
 							 headers=parameters["http"]['headers'],

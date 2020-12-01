@@ -11,12 +11,12 @@ import json
 import pytest
 import requests
 from ruamel import yaml
-from jinja2 import Environment, FileSystemLoader
 from YouShuYun_API.common.base_api import BaseApi
-from YouShuYun_API.common.variable import is_vars
+from YouShuYun_API.utils.logger import log
 
 BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'templates')
+print(DATA_DIR)
 
 class TestSaveDeviceId(BaseApi):
 	host = "http://testapi.ad6755.com"
@@ -60,6 +60,8 @@ class TestSaveDeviceId(BaseApi):
 			if k == "extract":
 				for k, v in v.items():  # 1>>content.data.token
 					tmp[k] = v
+			else:
+				pass
 
 		variable = {}
 		for k, v in tmp.items():
@@ -68,26 +70,28 @@ class TestSaveDeviceId(BaseApi):
 			for i in lists:
 				con = con[i]
 			variable[k] = con
-		print(variable)
-		try:
-			with open("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml", "a+", encoding='utf-8') as f:
-				yaml.dump(variable, f, Dumper=yaml.RoundTripDumper, allow_unicode=True)
-			print("token缓存写入成功！")
-		except:
-			print("token缓存写入失败！")
 
-		request_data = json.dumps(parameters, ensure_ascii=False)  # >>>转成json字符串
-		print(request_data)
-		# print(type(request_data))
-		key = re.findall(r'^token$', request_data)
-		print(key)
+		file_path = "F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml"
+		if len(variable) != 0:
+			try:
+				with open(file_path, 'r', encoding='utf-8') as f:
+					contents = yaml.safe_load(f)
+					for i in contents:
+						pass
+				with open(file_path, "w", encoding='utf-8') as nf:
+					yaml.dump(variable, nf, Dumper=yaml.RoundTripDumper, allow_unicode=True, default_flow_style=False)
+			except:
+				print("token缓存写入失败！")
 
+		# data = self.load_yaml("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml")
+		# print(type(data))
 
-
-		# file_loader = FileSystemLoader(DATA_DIR)
-		# env = Environment(loader=file_loader, trim_blocks=True, lstrip_blocks=True)
-		# template = env.get_template('showminors.txt')
-		# output = template.render(content=res.json(), parameters=parameters)
-		# is_vars.set("token", output)
-		# to = is_vars.get("token")
-		# print(to)
+		req_yaml_data = json.dumps(parameters, ensure_ascii=False, indent=4)  # >>>编码成json字符串
+		var_list = re.findall(r"\{{(.*?)}\}", req_yaml_data)
+		req = req_yaml_data
+		for i in var_list:
+			log.info("替换变量：{}".format(i))
+			req = re.sub(r'\{{%s}}' % i, str(variable[i]), string=req)
+		log.info("替换结果为：{}".format(req))
+		new_parameters = json.loads(req, encoding='utf-8')  # >>>将替换后的结果，解码为Python对象
+		self.versed(new_parameters)

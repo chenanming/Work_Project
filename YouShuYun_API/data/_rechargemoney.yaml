@@ -16,7 +16,7 @@ tests:
     params:
       app_type: 32
       market_name: kuaiyingyong
-      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjA1NjgyMDgxLCJleHAiOjE2MDU3Njg0ODEsIm5iZiI6MTYwNTY4MjA4MSwianRpIjoiTHJQd3BOTzlEMnh2ZXF4ZSIsInN1YiI6MTU1Mn0.EvFf-ns4fwejAZP4j395_EEGwKf29YAB80_w0G1vqaM
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdGFwaS5hZDY3NTUuY29tL3NhdmVfZGV2aWNlX2lkIiwiaWF0IjoxNjA2ODA5MTg4LCJleHAiOjE2MDY4OTU1ODgsIm5iZiI6MTYwNjgwOTE4OCwianRpIjoiZFhjamhrYXRKa0RhTDFPYiIsInN1YiI6MTU1Nn0.XM_WKSjM2AvnG-wwtl-sfqs_IPL1lHccZ0I9SNWCXR8
   expected:
     response:
       code:

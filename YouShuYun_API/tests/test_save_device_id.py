@@ -39,7 +39,7 @@ class TestSaveDeviceId(BaseApi):
 	@allure.story("测试save_device_id接口")
 	@pytest.mark.datafile("save_device_id.yaml")
 	def test_save_device_id(self, parameters):
-		print(parameters)
+		print(type(parameters))
 		res = requests.request(parameters["http"]["method"],
 							   url=self.host + parameters["http"]["path"],
 							   headers=parameters["http"]["headers"],
@@ -54,11 +54,12 @@ class TestSaveDeviceId(BaseApi):
 		#
 		# is_vars.set("token", res.json()['data']['token'])
 		# to = is_vars.get("token")
+		# print(is_vars.get("token"))
 		self.token = res.json()["data"]["token"]
 		try:
 			self.caches["token"] = self.token
 			'''获取token，并写入caches.yaml文件'''
-			with open("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml", "a", encoding='utf-8') as f:
+			with open("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml", "w", encoding='utf-8') as f:
 				yaml.dump(self.caches, f, Dumper=yaml.RoundTripDumper)
 			print("token缓存写入成功！")
 		except:

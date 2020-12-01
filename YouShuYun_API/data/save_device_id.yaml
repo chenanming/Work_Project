@@ -4,7 +4,8 @@ tests:
   http:
     method: POST
     path: /save_device_id
-    token: $token
+    token: "{{token}}"
+    id: "{{msg}}"
     headers:
       modelname: Mi 6
       brandname: Xiaomi
@@ -44,8 +45,6 @@ tests:
       deviceCode: 93c2137932882c0308905681fd72c0c9
       market_name: kuaiyingyong
       mobile: MI 6
-  extract:
-    msg: content.code
   expected:
     response:
       code:

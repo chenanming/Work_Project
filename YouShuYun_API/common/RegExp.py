@@ -5,6 +5,7 @@
 # @File: RegExp.py
 # @Poject: Work_Project
 import re
+import json
 from YouShuYun_API.common.variable import is_vars
 from YouShuYun_API.utils.logger import log
 from YouShuYun_API.utils.serializa import is_json_str
@@ -13,8 +14,8 @@ class RegExp(object):
 	def __init__(self):
 		self.re = re
 
-	def findall(self, string):
-		keys = self.re.findall(r"\{(.*?)\}", string)
+	def findall(self, string):  # 传递json类型的字符串的参数
+		keys = self.re.findall(r"\{{(.*?)}\}", string)
 		return keys
 
 	def subs(self, keys, string):
@@ -33,28 +34,39 @@ class RegExp(object):
 regexps = RegExp()
 if __name__ == "__main__":
 	a = {
-  "tests": {
-    "method": "POST",
-    "path": "/save_device_id",
-    "headers": {
-      "modelname": "Mi 6",
-      "brandname": "Xiaomi",
-      "appsystem": "kuaiyingyong",
-      "version": "3.2.1",
-      "androidid": "5d20dfe6dc75c465",
-      "imei": "868030036658167",
-      "cache-control": "no-cache",
-      "Content-Type": "application/x-www-form-urlencoded",
-      "Postman-Token": "17fbb1af-2aed-492a-b05a-bc87bd9ddeb6"
+    "case": "验证tong获取",
+    "http": {
+        "method": "POST",
+        "path": "/save_device_id",
+        "token": "{{token}}",
+        "headers": {
+            "modelname": "Mi 6",
+            "brandname": "Xiaomi",
+            "appsystem": "kuaiyingyong",
+            "version": "3.2.1",
+            "androidid": "5d20dfe6dc75c465",
+            "imei": "868030036658167",
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "params": {
+            "Uid": "5d20dfe6dc75c465",
+            "app_type": 32,
+            "deviceCode": "93c2137932882c0308905681fd72c0c9",
+            "market_name": "kuaiyingyong",
+            "mobile": "MI 6",
+            "sign": "d39e7dd120c026829bd0434fc630697d"
+        }
     },
-    "params": {
-      "Uid": "5d20dfe6dc75c465",
-      "app_type": 32,
-      "deviceCode": "221964b5488ab8b48cea68e54cb996a9",
-      "market_name": "kuaiyingyong",
-      "mobile": "MI 6",
-      "token": "${token}$"
+    "extract": {
+        "token": "content.data.token",
+        "msg": "content.msg"
     },
-  }
+    "expected": {
+        "response": {
+            "code": [
+                1
+            ]
+        }
+    }
 }
 	print(regexps.findall(a))
