@@ -9,15 +9,15 @@ import json
 import pytest
 from ruamel import yaml
 
-BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, 'data')
+Base_Path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+Data_Path = os.path.join(Base_Path, 'data')
 
 def pytest_generate_tests(metafunc):
     ids = []
     markers = metafunc.definition.own_markers
     for marker in markers:
         if marker.name == 'datafile':  # 读取外数据
-            test_data_path = os.path.join(DATA_DIR, marker.args[0])  # 拼接测试数据路径
+            test_data_path = os.path.join(Data_Path, marker.args[0])  # 拼接测试数据路径
             with open(test_data_path, encoding='utf-8') as f:
                 ext = os.path.splitext(test_data_path)[-1]
                 if ext in ['.yaml', '.yml']:

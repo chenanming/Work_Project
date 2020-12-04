@@ -13,20 +13,20 @@ import requests
 from ruamel import yaml
 from YouShuYun_API.common.base_api import BaseApi
 from YouShuYun_API.utils.logger import log
+from YouShuYun_API.common.variable import is_vars
 
-BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, 'templates')
-print(DATA_DIR)
+Base_Path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 class TestSaveDeviceId(BaseApi):
 	host = "http://testapi.ad6755.com"
 
 	@pytest.mark.datafile("save_device_id.yaml")
 	def test_save_device_id(self, parameters):
-		res = requests.request(parameters["http"]["method"],
-							   url=self.host + parameters["http"]["path"],
-							   headers=parameters["http"]["headers"],
-							   params=self.sign(parameters["http"]["params"]),
+		parameters1 = self.template(parameters)
+		res = requests.request(parameters1["http"]["method"],
+							   url=self.host + parameters1["http"]["path"],
+							   headers=parameters1["http"]["headers"],
+							   params=self.sign(parameters1["http"]["params"]),
 							   # proxies=self.proxies
 							   )
 		self.versed(res.json())
@@ -70,28 +70,21 @@ class TestSaveDeviceId(BaseApi):
 			for i in lists:
 				con = con[i]
 			variable[k] = con
+			# variable = is_vars.set(k, con)
 
-		file_path = "F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml"
+		file_path = os.path.join(Base_Path, 'config/caches.yaml')
+		print(file_path)
 		if len(variable) != 0:
 			try:
-				with open(file_path, 'r', encoding='utf-8') as f:
-					contents = yaml.safe_load(f)
-					for i in contents:
-						pass
-				with open(file_path, "w", encoding='utf-8') as nf:
-					yaml.dump(variable, nf, Dumper=yaml.RoundTripDumper, allow_unicode=True, default_flow_style=False)
+				# with open(file_path, 'r', encoding='utf-8') as f:
+				# 	contents = yaml.safe_load(f)
+				# 	for i in contents:
+				# 		pass
+
+				with open(file_path, "a+", encoding='utf-8') as nf:
+					yaml.dump(variable, nf, Dumper=yaml.RoundTripDumper, allow_unicode=True)
 			except:
 				print("token缓存写入失败！")
 
-		# data = self.load_yaml("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml")
-		# print(type(data))
-
-		req_yaml_data = json.dumps(parameters, ensure_ascii=False, indent=4)  # >>>编码成json字符串
-		var_list = re.findall(r"\{{(.*?)}\}", req_yaml_data)
-		req = req_yaml_data
-		for i in var_list:
-			log.info("替换变量：{}".format(i))
-			req = re.sub(r'\{{%s}}' % i, str(variable[i]), string=req)
-		log.info("替换结果为：{}".format(req))
-		new_parameters = json.loads(req, encoding='utf-8')  # >>>将替换后的结果，解码为Python对象
-		self.versed(new_parameters)
+		variable = self.load_yaml("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml")
+		print(type(variable))

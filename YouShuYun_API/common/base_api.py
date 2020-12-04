@@ -5,30 +5,29 @@
 # @File: base_api.py
 # @Poject: Work_Project
 
+import os
+import re
 import json
 import base64
 import requests
 import hashlib
-import logging
 from ruamel import yaml
 from jsonpath import jsonpath
 from YouShuYun_API.utils.json_format import JsonData
-from YouShuYun_API.utils.commlib import ReadTestYaml
-
+from YouShuYun_API.utils.logger import log
 
 class BaseApi():
 	'''
 	versed:
-	jsonpath:
-	load_yaml:
-	send:
-	sign:
-	get_test_data:
 	'''
+	Base_Path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+
 
 	@classmethod
-	# 封装对json数据（r），格式化输出
 	def versed(cls, json_object):
+		"""
+		封装对json数据（r），格式化输出
+		"""
 		print(JsonData.format(json_object))
 
 	@classmethod
@@ -36,25 +35,23 @@ class BaseApi():
 		return jsonpath(json_data, expr)
 
 	@classmethod
-	# 封装yaml文件读取的代码，通过路径直接读取yaml文件
-	def load_yaml(cls, file_path):
+	def load_yaml(cls, file_path, sub=None):
+		"""
+		封装yaml文件读取的代码，通过路径直接读取yaml文件
+		"""
+		file_path = os.path.join(cls.Base_Path, file_path)
 		with open(file_path, 'r', encoding='utf-8') as f:
-			return yaml.safe_load(f)
+			if sub is None:
+				return yaml.safe_load(f)
+			else:
+				return yaml.safe_load(f)[sub]
 
-	def send(self, req: dict):
-		if "http" == req["schema"]:
-			res = requests.request(req["method"], req["url"], header=req["headers"])
-			return json.loads(base64.decode(res.content))
-		elif "dubbo" == req["schema"]:
-			pass
-		elif "websocket" == req["schema"]:
-			pass
-		else:
-			pass
 
 	@classmethod
-	# 封装MD5方式加密（请求参数排序后，拼接参数的value+盐），生成签名
 	def sign(cls, body, appSecret="e9f0680f92d95ff9541e1eaff2cc18b6"):
+		"""
+		封装MD5方式加密（请求参数排序后，拼接参数的value+盐），生成签名
+		"""
 		lists = []
 		for k, v in sorted(body.items()):
 			if k[1] != "" and k[0] != "sign":
@@ -72,9 +69,11 @@ class BaseApi():
 		lists.clear()
 		return body
 
+
 	@classmethod
-	# 封装获取yaml文件格式的，测试数据
 	def get_test_data(cls, test_data_path):
+		"""封装获取yaml文件格式的，测试数据
+		"""
 		case = []  # 存储测试用例名称
 		http = []  # 存储请对象
 		expected = []  # 存储预期结果
@@ -90,10 +89,45 @@ class BaseApi():
 		return case, paramesters
 
 	@classmethod
-	def get_token(cls):
-		token = cls.load_yaml("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml")
+	def get_token(cls, file_path):
+		file_path = os.path.join(cls.Base_Path, file_path)
+		token = cls.load_yaml(file_path)
 		return token['token']
 
+	@classmethod
+	def template(cls, parameters):
+		"""
+		使用模板技术，把yml文件中的变量进行二次转化，是本框架的yml文件的技术基础
+		:param parameters: 读取yaml文件的，得到的测试数据
+		:param data: 其他API请求提取的参数值，用于其他API
+		"""
+		data = cls.load_yaml("config/caches.yaml")  # 从其他API响应中，提取的所有参数>>>文件
+		parameters = json.dumps(parameters, ensure_ascii=False, indent=4)  # >>>编码成json字符串
+		var_list = re.findall(r"\${(.*?)}", parameters)
+		parameters = parameters
+		for i in var_list:
+			log.info("替换变量：{}".format(i))
+			parameters = re.sub(r'\${%s}' % i, str(data[i]), string=parameters)
+		log.info("替换结果为：{}".format(parameters))
+		parameters = json.loads(parameters, encoding='utf-8')  # >>>将替换后的结果，解码为Python对象
+		return parameters
+
+	def send_api(self, req: dict):
+		req = self.template(req)
+		# if "http" == req["schema"]:
+		# 	res = requests.request(req["method"], req["url"], header=req["headers"])
+		# 	return json.loads(base64.decode(res.content))
+		# elif "dubbo" == req["schema"]:
+		# 	pass
+		# elif "websocket" == req["schema"]:
+		# 	pass
+		# else:
+		# 	pass
+		return req
+
+
 if __name__ == "__main__":
-	token = BaseApi.get_token()
-	print(token)
+	api = BaseApi()
+	parameters = api.load_yaml("data/save_device_id.yaml")
+	data = api.send_api(parameters)
+

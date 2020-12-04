@@ -1,11 +1,11 @@
 ---
 tests:
-- case: 验证tong获取
+- case: 验证token获取
   http:
     method: POST
     path: /save_device_id
-    token: "{{token}}"
-    id: "{{msg}}"
+    token: ${token}
+    id: ${msg}
     headers:
       modelname: Mi 6
       brandname: Xiaomi
@@ -16,7 +16,7 @@ tests:
       Content-Type: application/x-www-form-urlencoded
     params:
       Uid: 5d20dfe6dc75c465
-      app_type: 32
+      app_type: ${app_type}$
       deviceCode: 93c2137932882c0308905681fd72c0c9
       market_name: kuaiyingyong
       mobile: MI 6
