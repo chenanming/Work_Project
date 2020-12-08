@@ -8,10 +8,7 @@
 import pytest
 import allure
 import requests
-from YouShuYun_API.utils.request import req
 from YouShuYun_API.common.base_api import BaseApi
-from YouShuYun_API.common.variable import is_vars
-
 
 
 class TestRechargeMoney(BaseApi):

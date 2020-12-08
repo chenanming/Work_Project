@@ -6,14 +6,9 @@
 # @Poject: Work_Project
 
 import os
-import re
-import json
 import pytest
 import requests
-from ruamel import yaml
 from YouShuYun_API.common.base_api import BaseApi
-from YouShuYun_API.utils.logger import log
-from YouShuYun_API.common.variable import is_vars
 
 Base_Path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
@@ -22,11 +17,11 @@ class TestSaveDeviceId(BaseApi):
 
 	@pytest.mark.datafile("save_device_id.yaml")
 	def test_save_device_id(self, parameters):
-		parameters1 = self.template(parameters)
-		res = requests.request(parameters1["http"]["method"],
-							   url=self.host + parameters1["http"]["path"],
-							   headers=parameters1["http"]["headers"],
-							   params=self.sign(parameters1["http"]["params"]),
+		parameters = self.regexps(parameters)
+		res = requests.request(parameters["http"]["method"],
+							   url=self.host + parameters["http"]["path"],
+							   headers=parameters["http"]["headers"],
+							   params=self.sign(parameters["http"]["params"]),
 							   # proxies=self.proxies
 							   )
 		self.versed(res.json())
@@ -55,6 +50,7 @@ class TestSaveDeviceId(BaseApi):
 		print(extrat)
 		"""
 
+		"""
 		tmp = {}
 		for k, v in parameters.items():
 			if k == "extract":
@@ -69,22 +65,17 @@ class TestSaveDeviceId(BaseApi):
 			con = res.json()
 			for i in lists:
 				con = con[i]
-			variable[k] = con
-			# variable = is_vars.set(k, con)
+			# variable[k] = con
+			variable = is_vars.set(k, con)
+		"""
+
+		variable = self.setEnvironmentVariable(parameters, res)
 
 		file_path = os.path.join(Base_Path, 'config/caches.yaml')
-		print(file_path)
-		if len(variable) != 0:
-			try:
-				# with open(file_path, 'r', encoding='utf-8') as f:
-				# 	contents = yaml.safe_load(f)
-				# 	for i in contents:
-				# 		pass
-
-				with open(file_path, "a+", encoding='utf-8') as nf:
-					yaml.dump(variable, nf, Dumper=yaml.RoundTripDumper, allow_unicode=True)
-			except:
-				print("token缓存写入失败！")
-
-		variable = self.load_yaml("F:\chenanming\Work_Project\YouShuYun_API\config\caches.yaml")
-		print(type(variable))
+		# print(file_path)
+		# if len(variable) != 0:
+		# 	try:
+		# 		with open(file_path, "a+", encoding='utf-8') as nf:
+		# 			yaml.dump(variable, nf, Dumper=yaml.RoundTripDumper, allow_unicode=True)
+		# 	except:
+		# 		print("token缓存写入失败！")
