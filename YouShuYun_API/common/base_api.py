@@ -9,6 +9,8 @@ import os
 import re
 import json
 import hashlib
+import base64
+import requests
 from ruamel import yaml
 from jsonpath import jsonpath
 from YouShuYun_API.utils.json_format import JsonData
@@ -104,14 +106,12 @@ class BaseApi():
 			else:
 				pass
 
-		variables = {}
 		for k, v in tmp.items():
 			lists = v.split(".")[1:]  # 1>>data.token
 			con = res.json()
 			for i in lists:
 				con = con[i]
 			is_vars.set(k, con)
-		# return variables
 
 	@classmethod
 	def regexps(cls, parameters):
@@ -125,28 +125,29 @@ class BaseApi():
 		var_list = re.findall(r"\${(.*?)}", parameters)  # 查找
 		parameters = parameters
 		for i in var_list:
-			log.info("替换变量：{}".format(i))
+			# log.info("替换变量：{}".format(i))
 			parameters = re.sub(r'\${%s}' % i, str(is_vars.get(i)), string=parameters)
-		log.info("替换结果为：{}".format(parameters))
+		# log.info("替换结果为：{}".format(parameters))
 		parameters = json.loads(parameters, encoding='utf-8')  # >>>将替换后的结果，解码为Python对象
 		return parameters
 
-	def send_api(self, req: dict):
+	def request(self, req: dict, **kwargs):
+		proxies = {
+			'http': 'http://127.0.0.1:8888/',
+			'https': 'http://127.0.0.1:8888/',
+		}
 		req = self.regexps(req)
-		# if "http" == req["schema"]:
-		# 	res = requests.request(req["method"], req["url"], header=req["headers"])
-		# 	return json.loads(base64.decode(res.content))
-		# elif "dubbo" == req["schema"]:
-		# 	pass
-		# elif "websocket" == req["schema"]:
-		# 	pass
-		# else:
-		# 	pass
-		return req
+		url = "http://testapi.ad6755.com" + req["http"]["path"]
+		method = req["http"]["method"]
+		headers = req["http"]["headers"]
+		params = req["http"]["params"]
 
+		res = requests.request(method=method, url=url, headers=headers, params=params, **kwargs)
+		self.setEnvironmentVariable(req, res)
+		return res
 
 if __name__ == "__main__":
 	api = BaseApi()
 	parameters = api.load_yaml("data/save_device_id.yaml")
-	data = api.send_api(parameters)
+	data = api.request(parameters)
 

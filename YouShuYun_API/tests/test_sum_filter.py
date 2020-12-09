@@ -7,23 +7,16 @@
 
 import os
 import pytest
-import requests
 from YouShuYun_API.common.base_api import BaseApi
 
-Base_Path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+# Base_Path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 class TestSaveDeviceId(BaseApi):
-	host = "http://testapi.ad6755.com"
-
 	@pytest.mark.datafile("save_device_id.yaml")
 	def test_save_device_id(self, parameters):
-		parameters = self.regexps(parameters)
-		res = requests.request(parameters["http"]["method"],
-							   url=self.host + parameters["http"]["path"],
-							   headers=parameters["http"]["headers"],
-							   params=self.sign(parameters["http"]["params"]),
-							   # proxies=self.proxies
-							   )
+		env = self.load_yaml("data/env.yaml")
+		print(env)
+		res = self.request(parameters)
 		self.versed(res.json())
 		"""
 		print(content)
@@ -69,9 +62,8 @@ class TestSaveDeviceId(BaseApi):
 			variable = is_vars.set(k, con)
 		"""
 
-		variable = self.setEnvironmentVariable(parameters, res)
 
-		file_path = os.path.join(Base_Path, 'config/caches.yaml')
+		# file_path = os.path.join(Base_Path, 'config/caches.yaml')
 		# print(file_path)
 		# if len(variable) != 0:
 		# 	try:

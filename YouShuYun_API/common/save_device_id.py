@@ -51,8 +51,6 @@ class QiLogin(BaseApi):
 '''悠书云小说(快应用)'''
 @pytest.mark.quicktest
 class QuickLogin(BaseApi):
-	caches = {}
-	token = None
 	_save_id_url ="http://testapi.ad6755.com/save_device_id"
 	_login_url = "http://testapi.ad6755.com/checkSms"
 	_user_info_url = "http://testapi.ad6755.com/get_user_info"
@@ -103,7 +101,8 @@ class QuickLogin(BaseApi):
 			print("token缓存写入失败！")
 		return QuickLogin.token  # QuickLogin类的实例，供全局调用
 
-	def get_user_info(self):
+	@pytest.mark.datafile("")
+	def get_user_info(self, ):
 		params = {
 			"app_type": "32",
 			"market_name": "kuaiyingyong",

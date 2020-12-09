@@ -28,7 +28,7 @@ class HttpRequest(object):
 		self.r = requests.session()
 		self.headers = testinfo.test_info('headers')
 
-	def send_request(self, method: str, path: str, extract: str, **kwargs):
+	def send_request(self, parameters):
 		"""发送请求
 		:param method: 发送方法
 		:param route: 发送路径
@@ -52,29 +52,21 @@ class HttpRequest(object):
 		:param cert: 如果是字符串，则为ssl客户端证书文件（.pem）的路径
 		:return: request响应
 		"""
-		method = method.upper()
-		url = testinfo.test_info('url') + path
+		method = parameters["http"]["method"]
+		url = testinfo.test_info('url') + parameters["http"]["path"]
 		try:
 			log.info("Request Url: {}".format(url))
 			log.info("Request Method: {}".format(method))
-			if kwargs:
-				kwargs_str = serialization(kwargs)
-				is_sub = regexps.findall(kwargs_str)
-				if is_sub:
-					new_kwargs_str = deserialization(regexps.subs(is_sub, kwargs_str))
-					log.info("Request Data1: {}".format(new_kwargs_str))
-					kwargs = new_kwargs_str
-			log.info("Request Data2: {}".format(kwargs))
 			if method == "GET":
-				response = self.r.get(url, **kwargs, headers=self.headers, timeout=self.timeout)
+				response = self.r.get(url, headers=self.headers, timeout=self.timeout)
 			elif method == "POST":
-				response = self.r.post(url, **kwargs, headers=self.headers, timeout=self.timeout)
+				response = self.r.post(url, headers=self.headers, timeout=self.timeout)
 			elif method == "PUT":
-				response = self.r.put(url, **kwargs, headers=self.headers, timeout=self.timeout)
+				response = self.r.put(url, headers=self.headers, timeout=self.timeout)
 			elif method == "DELETE":
-				response = self.r.delete(url, **kwargs, headers=self.headers, timeout=self.timeout)
+				response = self.r.delete(url, headers=self.headers, timeout=self.timeout)
 			elif method in ("OPTIONS", "HEAD", "PATCH"):
-				response = self.r.request(method, url, **kwargs, headers=self.headers, timeout=self.timeout)
+				response = self.r.request(method, url, headers=self.headers, timeout=self.timeout)
 			else:
 				raise AttributeError("send request method is ERROR!")
 			with allure.step("%s请求接口" % method):
